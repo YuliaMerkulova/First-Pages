@@ -10,22 +10,32 @@
 </head>
 <body>
 <!--TODO:какая структура была бы более правильной?-->
-<header>
-    <nav class="main-menu">
-        <ul class="main-menu__list">
-            <!--TODO:как-то нужно добавить логотип, чтобы он был слева..-->
-            <li><button class="main-menu__button">Главная</button></li>
-            <li><button class="main-menu__button">Услуги</button></li>
-            <li><button class="main-menu__button">Как мы работаем</button></li>
-            <li><button class="main-menu__button">Портфолио</button></li>
-            <li><button class="main-menu__button">О нас</button></li>
-            <li><button class="main-menu__button">Контакты</button></li>
+<header class="header">
+    <img src="images/logo.png" alt="Логотип" class="header-logo"><b>МяуМяуСолюшенс</b>
+    <nav class="header-nav">
+        <ul class="header-nav__list">
+            <li><button class="header-nav__button">Главная</button></li>
+            <li><button class="header-nav__button">Услуги</button>
+                <ul class="header-nav__submenu">
+                    <li><button class="header-nav__button">Услуга1</button></li>
+                    <li><button class="header-nav__button">Услуга2</button></li>
+                </ul>
+            </li>
+            <li><button class="header-nav__button">Как мы работаем</button></li>
+            <li><button class="header-nav__button">Портфолио</button></li>
+            <li><button class="header-nav__button">О нас</button></li>
+            <li><button class="header-nav__button">Контакты</button></li>
         </ul>
     </nav>
-    <h1 class="main-menu__header">Компания по глажке и пристройке котиков!<br> Всегда рады вас видеть)</h1>
-    <button class="main-menu__consultation-button">Запросить консультацию
-    </button>
-    <!--TODO:ёбаная стрелка не получаецца-->
 </header>
+<main>
+    <section class="preview-image">
+        <h1 class="preview-image__header">Компания по глажке и пристройке котиков</h1>
+        <button class="preview-image__consultation-button">Запросить консультацию</button>
+        <svg width="50px" height="50px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="preview-arrow-icon">
+            <path d="M12 6V18M12 18L7 13M12 18L17 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </section>
+</main>
 </body>
 </html>

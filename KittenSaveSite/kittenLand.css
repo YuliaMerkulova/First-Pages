@@ -1,26 +1,33 @@
 body {
     background-color: white;
-}
-/*TODO: сейчас котик обрезается. как сделать, чтобы не обрезалась картинка?*/
-header {
-    height: 300px;
-    width: 100%;
-    background-image: url("images/kitten_header.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    font-family: "Open Sans", sans-serif;
 }
 
-.main-menu__list {
+.header-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.header {
+    display: flex;
     background-color: rgba(255 182 193 / 0.5);
-    height: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-nav__list {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
 }
-
-.main-menu__button {
+.header-nav__list>li{
+    position: relative;
+}
+.header-nav__button {
     font-family: "Open Sans", sans-serif;
     font-size: 12pt;
     text-align: center;
@@ -30,18 +37,40 @@ header {
     height: 50px;
     cursor: pointer;
 }
+.header-nav__submenu {
+    display: none;
+    list-style-type: none;
+}
 
-.main-menu__header {
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
-    color: azure;
-    margin-top: 30px;
+li:hover ul {
+    display: block;
+    position: absolute;
+    background-color: rgba(255 182 193 / 1);
+}
+
+.preview-image {
+    width: 100%; /* Ширина контейнера */
+    height: 600px; /* Высота контейнера */
+    background-image: url("images/kitten_header.jpg");
+    background-size: cover; /* Ширина — 100%, высота — автоматическая */
+    background-repeat: no-repeat; /* Запрещаем повторение */
+    background-position: center center; /* Центрируем по горизонтали и выравниваем по верху */
     position: relative;
 }
 
-/*TODO:вопрос: как правильнее позиционировать кнопку? относительно чего? */
-.main-menu__consultation-button {
-    margin: 10px;
+.preview-image__header {
+    font-family: "Open Sans", sans-serif;
+    font-size: 25pt;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+/*!*TODO:вопрос: как правильнее ннастроить позиционирование по всей странице? ощущение что щас через опу? *!*/
+.preview-image__consultation-button {
     font-family: "Open Sans", sans-serif;
     position: absolute;
     color: white;
@@ -49,24 +78,16 @@ header {
     background-color: transparent;
     border-color: lightpink;
     border-radius: 25px;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
 
 }
 
-.main-menu__consultation-button:after {
-    content: "";
-    display: block;
+.preview-arrow-icon {
     position: absolute;
-    top: 100%;
+    top: 80%;
     left: 50%;
-    transform: translateX(-50%);
-    background-image: url("images/ea5ecfe8eca5a2927813c96c1ff60151.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 60px;
-    height: 60px;
-    margin-top: 20px;
+    transform: translate(-50%, -50%);
 }
